@@ -8,6 +8,8 @@ home.geometry("1300x700")
 
 sliptframe = LabelFrame(home, text="Order")
 sliptframe.grid()
+orderlist = Listbox(sliptframe)
+orderlist.grid(ipadx=120,ipady=90,row=0,sticky=N)
 
 
 #### Time Date Zone ##########################################
@@ -192,7 +194,11 @@ def addcartcommand():
     drink.append(thing + (" "*20) + thingprice + (" "*20) + amount )
     subtotal += (cafeinfo[cafevar.get()][1] + sizeinfo[sizevar.get()] + typeinfo[typevar.get()])*int(amount)
     #print cafeinfo[cafevar.get()][1]
-    print drink,subtotal
+    orderlist = Listbox(sliptframe)
+    for i in range(1,len(drink)+1):
+        orderlist.insert(i,drink[i-1])
+    
+    orderlist.grid(ipadx=120,ipady=90,row=0,sticky=N)
 
     
 def removecommand():
@@ -202,15 +208,23 @@ def removecommand():
     amount = numvar.get()
     drink.remove(thing + (" "*20) + thingprice + (" "*20) + amount )
     subtotal -= (cafeinfo[cafevar.get()][1] + sizeinfo[sizevar.get()] + typeinfo[typevar.get()])*int(amount)
-    print drink,subtotal
-
+    orderlist = Listbox(sliptframe)
+    for i in range(1,len(drink)+1):
+        orderlist.insert(i,drink[i-1])
+    
+    orderlist.grid(ipadx=120,ipady=90,row=0,sticky=N)
 
     
 def clearcommand():
     global drink,subtotal
     drink = []
     subtotal = 0
-    print drink,subtotal
+    orderlist = Listbox(sliptframe)
+    for i in range(1,len(drink)+1):
+        orderlist.insert(i,drink[i-1])
+    
+    orderlist.grid(ipadx=130,ipady=90,row=0,sticky=N)
+
 def cashcommand():
     global drink,subtotal
     
@@ -219,8 +233,16 @@ def cashcommand():
     drink.append(vat)
     total = "Total              " + str(subtotal+(subtotal*0.07))
     drink.append(total)
+    slipt = Tk()
+    slipt.title("Receipt")
+    shoplabel = Label(slipt,text="The Unsleepable",font = ("Agency FB",20 )).grid(row=0)
     
-    print drink
+    lbslipt = Listbox(slipt)
+    for i in range(1,len(drink)+1):
+        lbslipt.insert(i,drink[i-1])
+    thanklabel = Label(slipt,text="Thank You For Your Purchase",font = ("Agency FB",20 )).grid(row=3)
+    lbslipt.grid(ipadx=120,ipady=90,row=2)
+    #print drink
 def ingredientcommand():
     showing = Tk()
     showing.title(cafevar.get())
@@ -246,7 +268,7 @@ ingredient.grid(row=2,column=1,stick=W)
 cafeinfo = {
             'Affogato':["crema,espresso,ice cream",20]
             , 'Americano':["hot water,espresso",20]
-            , 'Blackeye':["dripped coffee,espresso",20]
+            , 'Black Eye':["dripped coffee,espresso",20]
             , 'Borgia':["cinnamon,orange peel,whipped cream,hot chocolate,espresso",20]
             , 'Breve':["milk foam steamed half and half,espresso",20]
             , 'Cafe Crema':["crema,much longer brewed espresso",20]
