@@ -6,7 +6,7 @@ home.geometry("1300x700")
 ####  SLIPT ZONE ########################################
         #Slipt Frame#
 
-sliptframe = LabelFrame(home, text="Order")
+sliptframe = LabelFrame(home, text="Order",font =("helvetica",16))
 sliptframe.grid()
 orderlist = Listbox(sliptframe)
 orderlist.grid(ipadx=120,ipady=90,row=0,sticky=N)
@@ -14,7 +14,7 @@ orderlist.grid(ipadx=120,ipady=90,row=0,sticky=N)
 
 #### Time Date Zone ##########################################
 def updatetime():
-    current = time.strftime("%H:%M:%S"+"\n"+"%d:%a:%b:%Y")
+    current = time.strftime("%H:%M:%S"+"\n"+"%a:%d:%b:%Y")
     timetext.configure(text=current)
     home.after(1000,updatetime)
     
@@ -27,7 +27,7 @@ updatetime()
 
 ####  NUMPAD ZONE ########################################
         #Numpad Frame#
-numpad = LabelFrame(home, text="Amount of Coffee")
+numpad = LabelFrame(home, text="Amount of Coffee",font =("helvetica",16))
 numpad.grid(row=1,column=1,sticky=E)
 numvar = StringVar()
  
@@ -56,11 +56,11 @@ n9.grid(row=3,column=3,ipadx=40,ipady=40)
 n1.select()
 ####Coffe Selection Zone ###############################
         #Selection Frame= size+type+coffee#
-select = LabelFrame(home,text = "Coffee Selection")
+select = LabelFrame(home,text = "Coffee Selection",font =("helvetica",16))
 select.grid(row=0,column=1,sticky=N)
 ####  TYPE ZONE ########################################
         #Type Frame#
-typepad = LabelFrame(select, text="Select Type")
+typepad = LabelFrame(select, text="Select Type",font =("helvetica",12))
 typepad.grid(row=0,column=0,sticky=NW)
 typevar = StringVar()
         #Type radiobutton#
@@ -73,7 +73,7 @@ frappe.grid(row=0,column=2,ipadx=50,ipady=20)
 hot.select()#-->default select = hot
 ####  SIZE ZONE ########################################
         #Size Frame#
-sizepad = LabelFrame(select, text="Select Size")
+sizepad = LabelFrame(select, text="Select Size",font =("helvetica",12))
 sizepad.grid(row=1,column=0,sticky=W)
 sizevar = StringVar()
         #Size RadioButtonZone#
@@ -96,7 +96,7 @@ def myfunction(event):
     canvas.configure(scrollregion=canvas.bbox("all"),width=850,height=150)
 
 
-cafepad=LabelFrame(select,relief=GROOVE,width=200,height=100,bd=1,text = "Select Coffee",)
+cafepad=LabelFrame(select,relief=GROOVE,width=200,height=100,bd=1,text = "Select Coffee",font =("helvetica",12))
 cafepad.grid(sticky=W)
 canvas=Canvas(cafepad)
 cafeframe=Frame(canvas)
@@ -118,65 +118,65 @@ blackeye.grid(row=0,column=2,ipadx=75,ipady=20,sticky=W)
 borgia =  Radiobutton(cafeframe,text = "Borgia",indicatoron=0,value = "Borgia",variable=cafevar)
 borgia.grid(row=0,column=3,ipadx=85,ipady=20,sticky=W)
 breve =  Radiobutton(cafeframe,text = "Breve",indicatoron=0,value = "Breve",variable=cafevar)
-breve.grid(row=1,column=0,ipadx=80,ipady=20,sticky=W)
+breve.grid(row=1,column=0,ipadx=85,ipady=20,sticky=W)
 cafecrema =  Radiobutton(cafeframe,text = "Cafe Crema",indicatoron=0,value = "Cafe Crema",variable=cafevar)
 cafecrema.grid(row=1,column=1,ipadx=70,ipady=20,sticky=W)
 cafecubano =  Radiobutton(cafeframe,text = "Cafe Cubano",indicatoron=0,value = "Cafe Cubano",variable=cafevar)
-cafecubano.grid(row=1,column=2,ipadx=60,ipady=20,sticky=W)
+cafecubano.grid(row=1,column=2,ipadx=65,ipady=20,sticky=W)
 cafeaulait =  Radiobutton(cafeframe,text = "Cafe Au Lait",indicatoron=0,value = "Cafe Au Lait",variable=cafevar)
 cafeaulait.grid(row=1,column=3,ipadx=70,ipady=20,sticky=W)
 cafeconhielo =  Radiobutton(cafeframe,text = "Cafe Con Hielo",indicatoron=0,value = "Cafe Con Hielo",variable=cafevar)
-cafeconhielo.grid(row=2,column=0,ipadx=50,ipady=20,sticky=W)
+cafeconhielo.grid(row=2,column=0,ipadx=60,ipady=20,sticky=W)
 cafeconleche =  Radiobutton(cafeframe,text = "Cafe Con Leche",indicatoron=0,value = "Cafe Con Leche",variable=cafevar)
-cafeconleche.grid(row=2,column=1,ipadx=50,ipady=20,sticky=W)
+cafeconleche.grid(row=2,column=1,ipadx=60,ipady=20,sticky=W)
 cafedeltiempo =  Radiobutton(cafeframe,text = "Cafe Del Tiempo",indicatoron=0,value = "Cafe Del Tiempo",variable=cafevar)
-cafedeltiempo.grid(row=2,column=2,ipadx=50,ipady=20,sticky=W)
+cafedeltiempo.grid(row=2,column=2,ipadx=56,ipady=20,sticky=W)
 caffelatte =  Radiobutton(cafeframe,text = "Caffe Latte",indicatoron=0,value = "Caffe Latte",variable=cafevar)
-caffelatte.grid(row=2,column=3,ipadx=50,ipady=20,sticky=W)
+caffelatte.grid(row=2,column=3,ipadx=73,ipady=20,sticky=W)
 cappucino =  Radiobutton(cafeframe,text = "Cappucino",indicatoron=0,value = "Cappucino",variable=cafevar)
-cappucino.grid(row=3,column=0,ipadx=50,ipady=20,sticky=W)
+cappucino.grid(row=3,column=0,ipadx=71,ipady=20,sticky=W)
 flatwhite =  Radiobutton(cafeframe,text = "Flat White",indicatoron=0,value = "Flat White",variable=cafevar)
-flatwhite.grid(row=3,column=1,ipadx=50,ipady=20,sticky=W)
+flatwhite.grid(row=3,column=1,ipadx=75,ipady=20,sticky=W)
 cortado =  Radiobutton(cafeframe,text = "Cortado",indicatoron=0,value = "Cortado",variable=cafevar)
-cortado.grid(row=3,column=2,ipadx=50,ipady=20,sticky=W)
+cortado.grid(row=3,column=2,ipadx=78,ipady=20,sticky=W)
 cortadito =  Radiobutton(cafeframe,text = "Cortadito",indicatoron=0,value = "Cortadito",variable=cafevar)
-cortadito.grid(row=3,column=3,ipadx=50,ipady=20,sticky=W)
+cortadito.grid(row=3,column=3,ipadx=76,ipady=20,sticky=W)
 deadeye =  Radiobutton(cafeframe,text = "Dead Eye",indicatoron=0,value = "Dead Eye",variable=cafevar)
-deadeye.grid(row=4,column=0,ipadx=50,ipady=20,sticky=W)
+deadeye.grid(row=4,column=0,ipadx=76,ipady=20,sticky=W)
 dirtychailatte =  Radiobutton(cafeframe,text = "Dirty Chai Latte",indicatoron=0,value = "Dirty Chai Latte",variable=cafevar)
-dirtychailatte.grid(row=4,column=1,ipadx=50,ipady=20,sticky=W)
+dirtychailatte.grid(row=4,column=1,ipadx=61,ipady=20,sticky=W)
 doppio =  Radiobutton(cafeframe,text = "Doppio",indicatoron=0,value = "Doppio",variable=cafevar)
-doppio.grid(row=4,column=2,ipadx=50,ipady=20,sticky=W)
+doppio.grid(row=4,column=2,ipadx=80,ipady=20,sticky=W)
 espressino =  Radiobutton(cafeframe,text = "Espressino",indicatoron=0,value = "Espressino",variable=cafevar)
-espressino.grid(row=4,column=3,ipadx=50,ipady=20,sticky=W)
+espressino.grid(row=4,column=3,ipadx=74,ipady=20,sticky=W)
 espresso =  Radiobutton(cafeframe,text = "Espresso",indicatoron=0,value = "Espresso",variable=cafevar)
-espresso.grid(row=5,column=0,ipadx=50,ipady=20,sticky=W)
+espresso.grid(row=5,column=0,ipadx=77,ipady=20,sticky=W)
 espressoromano =  Radiobutton(cafeframe,text = "Espresso Romano",indicatoron=0,value = "Espresso Romano",variable=cafevar)
-espressoromano.grid(row=5,column=1,ipadx=50,ipady=20,sticky=W)
+espressoromano.grid(row=5,column=1,ipadx=55,ipady=20,sticky=W)
 galao =  Radiobutton(cafeframe,text = "Galao",indicatoron=0,value = "Galao",variable=cafevar)
-galao.grid(row=5,column=2,ipadx=50,ipady=20,sticky=W)
+galao.grid(row=5,column=2,ipadx=85,ipady=20,sticky=W)
 irishcoffee =  Radiobutton(cafeframe,text = "Irish Coffee",indicatoron=0,value = "Irish Coffee",variable=cafevar)
-irishcoffee.grid(row=5,column=3,ipadx=50,ipady=20,sticky=W)
+irishcoffee.grid(row=5,column=3,ipadx=71,ipady=20,sticky=W)
 lazyeye =  Radiobutton(cafeframe,text = "Lazy Eye",indicatoron=0,value = "Lazy Eye",variable=cafevar)
-lazyeye.grid(row=6,column=0,ipadx=50,ipady=20,sticky=W)
+lazyeye.grid(row=6,column=0,ipadx=77,ipady=20,sticky=W)
 longblack =  Radiobutton(cafeframe,text = "Long Black",indicatoron=0,value = "Long Black",variable=cafevar)
-longblack.grid(row=6,column=1,ipadx=50,ipady=20,sticky=W)
+longblack.grid(row=6,column=1,ipadx=72,ipady=20,sticky=W)
 lungo =  Radiobutton(cafeframe,text = "Lungo",indicatoron=0,value = "Lungo",variable=cafevar)
-lungo.grid(row=6,column=2,ipadx=50,ipady=20,sticky=W)
+lungo.grid(row=6,column=2,ipadx=83,ipady=20,sticky=W)
 macchiato =  Radiobutton(cafeframe,text = "Macchiato",indicatoron=0,value = "Macchiato",variable=cafevar)
-macchiato.grid(row=6,column=3,ipadx=50,ipady=20,sticky=W)
+macchiato.grid(row=6,column=3,ipadx=73,ipady=20,sticky=W)
 mocha =  Radiobutton(cafeframe,text = "Mocha",indicatoron=0,value = "Mocha",variable=cafevar)
-mocha.grid(row=7,column=0,ipadx=50,ipady=20,sticky=W)
+mocha.grid(row=7,column=0,ipadx=80,ipady=20,sticky=W)
 piccololatte =  Radiobutton(cafeframe,text = "Piccolo Latte",indicatoron=0,value = "Piccolo Latte",variable=cafevar)
-piccololatte.grid(row=7,column=1,ipadx=50,ipady=20,sticky=W)
+piccololatte.grid(row=7,column=1,ipadx=66,ipady=20,sticky=W)
 redeye =  Radiobutton(cafeframe,text = "Red Eye",indicatoron=0,value = "Red Eye",variable=cafevar)
-redeye.grid(row=7,column=2,ipadx=50,ipady=20,sticky=W)
+redeye.grid(row=7,column=2,ipadx=80,ipady=20,sticky=W)
 ristretto =  Radiobutton(cafeframe,text = "Ristretto",indicatoron=0,value = "Ristretto",variable=cafevar)
-ristretto.grid(row=7,column=3,ipadx=50,ipady=20,sticky=W)
+ristretto.grid(row=7,column=3,ipadx=79,ipady=20,sticky=W)
 turkishcoffe =  Radiobutton(cafeframe,text = "Turkish Coffe",indicatoron=0,value = "Turkish Coffe",variable=cafevar)
-turkishcoffe.grid(row=8,column=0,ipadx=50,ipady=20,sticky=W)
+turkishcoffe.grid(row=8,column=0,ipadx=63,ipady=20,sticky=W)
 vienna =  Radiobutton(cafeframe,text = "Vienna",indicatoron=0,value = "Vienna",variable=cafevar)
-vienna.grid(row=8,column=1,ipadx=50,ipady=20,sticky=W)
+vienna.grid(row=8,column=1,ipadx=82,ipady=20,sticky=W)
 affogato.select()
 
       
@@ -186,12 +186,13 @@ affogato.select()
         #command for action button#
 drink = []
 subtotal = 0
+status = 0
 def addcartcommand():
     global drink,subtotal
     thing = sizevar.get().capitalize() + " " + typevar.get().capitalize() + " " + cafevar.get()
     thingprice = str(cafeinfo[cafevar.get()][1] + sizeinfo[sizevar.get()] + typeinfo[typevar.get()])+" B"
     amount = numvar.get()
-    drink.append(thing + (" "*20) + thingprice + (" "*20) + amount )
+    drink.append(thing + (" "*20) + thingprice + (" "*20)+ "X" + amount )
     subtotal += (cafeinfo[cafevar.get()][1] + sizeinfo[sizevar.get()] + typeinfo[typevar.get()])*int(amount)
     #print cafeinfo[cafevar.get()][1]
     orderlist = Listbox(sliptframe)
@@ -206,7 +207,7 @@ def removecommand():
     thing = sizevar.get().capitalize() + " " + typevar.get().capitalize() + " " + cafevar.get()
     thingprice = str(cafeinfo[cafevar.get()][1] + sizeinfo[sizevar.get()] + typeinfo[typevar.get()])+" B"
     amount = numvar.get()
-    drink.remove(thing + (" "*20) + thingprice + (" "*20) + amount )
+    drink.remove(thing + (" "*20) + thingprice + (" "*20)+ "X"  + amount )
     subtotal -= (cafeinfo[cafevar.get()][1] + sizeinfo[sizevar.get()] + typeinfo[typevar.get()])*int(amount)
     orderlist = Listbox(sliptframe)
     for i in range(1,len(drink)+1):
@@ -216,53 +217,73 @@ def removecommand():
 
     
 def clearcommand():
-    global drink,subtotal
+    global drink,subtotal,status
     drink = []
     subtotal = 0
+    slipt.destroy()
     orderlist = Listbox(sliptframe)
     for i in range(1,len(drink)+1):
         orderlist.insert(i,drink[i-1])
     
     orderlist.grid(ipadx=130,ipady=90,row=0,sticky=N)
+    status = 0
 
 def cashcommand():
-    global drink,subtotal
+    global status, drink,subtotal,slipt
     
-    drink.append(("Subtotal     "+ str(subtotal)))
-    vat = "VAT 7%" + " "*20 + str(subtotal*0.07)
-    drink.append(vat)
-    total = "Total              " + str(subtotal+(subtotal*0.07))
-    drink.append(total)
-    slipt = Tk()
-    slipt.title("Receipt")
-    shoplabel = Label(slipt,text="The Unsleepable",font = ("Agency FB",20 )).grid(row=0)
+
+    if(status == 0 and drink != []):
+        
+        drink.append("-"*80)
+        drink.append(("Subtotal     "+ str(subtotal)+" B"))
+        vat = "VAT 7%" + " "*20 + str(subtotal*0.07)+" B"
+        drink.append(vat)
+        total = "Total              " + str(subtotal+(subtotal*0.07))+" B"
+        drink.append(total)
+        slipt = Tk()
+        slipt.title("Receipt")
+        shoplabel = Label(slipt,text="The Unsleepable",font = ("Agency FB",20 )).grid(row=0)   
     
-    lbslipt = Listbox(slipt)
-    for i in range(1,len(drink)+1):
-        lbslipt.insert(i,drink[i-1])
-    thanklabel = Label(slipt,text="Thank You For Your Purchase",font = ("Agency FB",20 )).grid(row=3)
-    lbslipt.grid(ipadx=120,ipady=90,row=2)
-    #print drink
+        lbslipt = Listbox(slipt)
+        for i in range(1,len(drink)+1):
+            lbslipt.insert(i,drink[i-1])
+        thanklabel = Label(slipt,text="Thank You For Your Purchase",font = ("Agency FB",20 )).grid(row=3)
+        lbslipt.grid(ipadx=120,ipady=90,row=2)
+        #print drink
+        status = 1
+    else:
+        slipt = Tk()
+        slipt.title("Receipt")
+        shoplabel = Label(slipt,text="The Unsleepable",font = ("Agency FB",20 )).grid(row=0)   
+    
+        lbslipt = Listbox(slipt)
+        for i in range(1,len(drink)+1):
+            lbslipt.insert(i,drink[i-1])
+        thanklabel = Label(slipt,text="Thank You For Your Purchase",font = ("Agency FB",20 )).grid(row=3)
+        lbslipt.grid(ipadx=120,ipady=90,row=2)
+        #print drink
+        
+        
 def ingredientcommand():
     showing = Tk()
     showing.title(cafevar.get())
     inglabel = Label(showing,text=cafeinfo[cafevar.get()][0])
     inglabel.grid(ipadx = 100)
         #Action Frame#
-actionpad = LabelFrame(home, text="Command Set")
+actionpad = LabelFrame(home, text="Command Set",font =("helvetica",16))
 actionpad.grid(row=1,column=1,sticky = NW)
 
         #Action ButtonZone#
-addcart = Button(actionpad, text="Add to Order",font =("helvetica",16),command = addcartcommand)
-addcart.grid(row=0,column=0,stick=W)
-removecart = Button(actionpad, text="Remove from Order",font =("helvetica",16),command = removecommand)
-removecart.grid(row=0,column=1,stick=W)
-clear = Button(actionpad, text="Clear Order",font =("helvetica",16),command = clearcommand)
-clear.grid(row=1,column=0,stick=W)
-cash = Button(actionpad, text="Cash",font =("helvetica",16),command = cashcommand)
-cash.grid(row=2,column=0,stick=W)
-ingredient = Button(actionpad, text = "Ingredient",font =("helvetica",16),command = ingredientcommand)
-ingredient.grid(row=2,column=1,stick=W)
+addcart = Button(actionpad, text="Add to Order",command = addcartcommand)
+addcart.grid(row=0,column=0,stick=W,ipadx=58,ipady=20)
+removecart = Button(actionpad, text="Remove from Order",command = removecommand)
+removecart.grid(row=0,column=1,stick=W,ipadx=39,ipady=20)
+clear = Button(actionpad, text="Clear Order",command = clearcommand)
+clear.grid(row=0,column=2,stick=W,ipadx=60,ipady=20)
+cash = Button(actionpad, text="Cash",command = cashcommand)
+cash.grid(row=1,column=1,stick=W,ipadx = 79,ipady=20)
+ingredient = Button(actionpad, text = "Ingredient",command = ingredientcommand)
+ingredient.grid(row=1,column=2,stick=W,ipadx = 63,ipady=20)
 ##### function for button Zone ###########################
 
 cafeinfo = {
