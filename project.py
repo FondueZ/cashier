@@ -188,6 +188,7 @@ affogato.select()
 drink = []
 subtotal = 0
 status = 0
+
 def addcartcommand():
     """add order to order interface and drinklist, +subtotal value"""
     global drink, subtotal
@@ -256,25 +257,17 @@ def cashcommand():
         lbslipt.grid(ipadx = 120, ipady = 90, row = 2)
         #print drink
         status = 1
-    else:
-        slipt = Tk()
-        slipt.title("Receipt")
-        shoplabel = Label(slipt, text = "The Unsleepable", font = ("Agency FB", 20 )).grid(row = 0)   
+        
+
     
-        lbslipt = Listbox(slipt)
-        for i in range(1, len(drink)+1):
-            lbslipt.insert(i, drink[i-1])
-        thanklabel = Label(slipt, text = "Thank You For Your Purchase", font = ("Agency FB", 20 )).grid(row = 3)
-        lbslipt.grid(ipadx = 120, ipady = 90, row = 2)
-        #print drink
-        
-        
 def ingredientcommand():
     """showing ingredient info"""
     showing = Tk()
     showing.title(cafevar.get())
     inglabel = Label(showing,text = cafeinfo[cafevar.get()][0])
     inglabel.grid(ipadx = 100)
+        
+        
         #Action Frame#
 actionpad = LabelFrame(home, text = "Command Set", font = ("helvetica", 16))
 actionpad.grid(row=1,column=1,sticky = NW)
@@ -293,40 +286,40 @@ ingredient.grid(row = 1, column = 2,stick = W, ipadx = 63, ipady = 20)
 ##### function for button Zone ###########################
 
 cafeinfo = {
-            'Affogato':["crema,espresso,ice cream", 20]
-            , 'Americano':["hot water,espresso", 20]
-            , 'Black Eye':["dripped coffee,espresso", 20]
-            , 'Borgia':["cinnamon,orange peel,whipped cream,hot chocolate,espresso", 20]
-            , 'Breve':["milk foam steamed half and half,espresso", 20]
-            , 'Cafe Crema':["crema,much longer brewed espresso", 20]
-            , 'Cafe Cubano':["crema,brewed with brown sugar espresso", 20]
-            , 'Cafe Au Lait':["scalded milk,Frech press coffee", 20]
-            , 'Cafe Con Hielo':["crema,espresso,ice cubes", 20]
-            , 'Cafe Con Leche':["espresso,serve with hot milk", 20]
-            , 'Cafe Del Tiempo':["espresso,serve with ice cubes and lemon slice", 20]
-            , 'Caffe Latte':["milk foam,steamed milk,espresso", 20]
-            , 'Cappucino':["milk foam,steamed milk,espresso", 20]
-            , 'Flat White':["steamed milk,espresso", 20]
-            , 'Cortado':["milk foam,warm milk,espresso", 20]
-            , 'Cortadito':["milk foam,warm milk,cubano", 20]
-            , 'Dead Eye':["dripped coffee,espresso", 20]
-            , 'Dirty Chai Latte':["milk foam,steamed milk,spiced blacktea,espresso", 20]
-            , 'Doppio':["crema,double espresso", 20]
-            , 'Espressino':["cocoa powder,steamed milk,espresso", 20]
-            , 'Espresso':["crema,espresso", 20]
-            , 'Espresso Romano':["lemon slice,espresso", 20]
-            , 'Galao':["foamed milk,espresso", 20]
-            , 'Irish Coffee':["heavy cream,Irish whiskey,French press coffee, brown sugar", 20]
-            , 'Lazy Eye':["decaffeinated drippd coffee,espresso", 20]
-            , 'Long Black':["espresso,hot water", 20]
-            , 'Lungo':["crema,longer brewed espresso", 20]
-            , 'Macchiato':["dash of foamed milk,espresso", 20]
-            , 'Mocha':["whipped cream,hot chocolate,espresso", 20]
-            , 'Piccolo Latte':["milk foam,steamed milk,ristretto", 20]
-            , 'Red Eye':["dripped coffee,esspresso", 20]
-            , 'Ristretto':["crema,espresso", 20]
-            , 'Turkish Coffe':["kopuk,sugar water,ground coffee", 20]
-            , 'Vienna':["whipped cream,espresso", 20]
+            'Affogato':["crema, espresso, ice cream", 60]
+            , 'Americano':["hot water, espresso", 40]
+            , 'Black Eye':["dripped coffee, espresso", 40]
+            , 'Borgia':["cinnamon, orange peel, whipped cream, hot chocolate, espresso", 100]
+            , 'Breve':["milk foam steamed half and half, espresso", 40]
+            , 'Cafe Crema':["crema, much longer brewed espresso", 40]
+            , 'Cafe Cubano':["crema, brewed with brown sugar espresso", 40]
+            , 'Cafe Au Lait':["scalded milk, Frech press coffee", 40]
+            , 'Cafe Con Hielo':["crema, espresso, ice cubes", 60]
+            , 'Cafe Con Leche':["espresso, serve with hot milk", 40]
+            , 'Cafe Del Tiempo':["espresso, serve with ice cubes and lemon slice", 40]
+            , 'Caffe Latte':["milk foam, steamed milk, espresso", 60]
+            , 'Cappucino':["milk foam, steamed milk, espresso", 60]
+            , 'Flat White':["steamed milk, espresso", 40]
+            , 'Cortado':["milk foam, warm milk, espresso", 60]
+            , 'Cortadito':["milk foam, warm milk, cubano", 60]
+            , 'Dead Eye':["dripped coffee, espresso", 40]
+            , 'Dirty Chai Latte':["milk foam, steamed milk, spiced blacktea, espresso", 80]
+            , 'Doppio':["crema, double espresso", 40]
+            , 'Espressino':["cocoa powder, steamed milk, espresso", 60]
+            , 'Espresso':["crema, espresso", 40]
+            , 'Espresso Romano':["lemon slice, espresso", 40]
+            , 'Galao':["foamed milk, espresso", 40]
+            , 'Irish Coffee':["heavy cream, Irish whiskey, French press coffee, brown sugar", 80]
+            , 'Lazy Eye':["decaffeinated drippd coffee, espresso", 40]
+            , 'Long Black':["espresso, hot water", 40]
+            , 'Lungo':["crema, longer brewed espresso", 40]
+            , 'Macchiato':["dash of foamed milk, espresso", 40]
+            , 'Mocha':["whipped cream, hot chocolate, espresso", 60]
+            , 'Piccolo Latte':["milk foam, steamed milk, ristretto", 60]
+            , 'Red Eye':["dripped coffee, esspresso", 40]
+            , 'Ristretto':["crema, espresso", 40]
+            , 'Turkish Coffe':["kopuk, sugar water, ground coffee", 40]
+            , 'Vienna':["whipped cream, espresso", 40]
             }
 sizeinfo = {"short":5, "tall":10, "grande":15, "venti":20, "trenta":25}
 typeinfo = {"hot":5, "iced":10, "frappe":15}
