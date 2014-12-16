@@ -283,7 +283,7 @@ cash = Button(actionpad, text = "Cash",command = cashcommand)
 cash.grid(row = 1, column = 1, stick = W, ipadx = 79,ipady = 20)
 ingredient = Button(actionpad, text = "Ingredient",command = ingredientcommand)
 ingredient.grid(row = 1, column = 2,stick = W, ipadx = 63, ipady = 20)
-##### function for button Zone ###########################
+##### Data Base zone ###########################
 
 cafeinfo = {
             'Affogato':["crema, espresso, ice cream", 60]
